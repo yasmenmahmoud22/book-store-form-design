@@ -1,0 +1,148 @@
+<!--yasmen mahmoud sayed 20198100 b2-->
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>forms html</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+ 
+</head>
+<body class="bg-img">
+    <header>
+    </header>
+
+    <div class="signin" id="signin">
+
+        <form id="form1" name="form1" action="/action_page.php" target="_blank" method="post"  onsubmit="return Maxlengthlname(),requiredfields()">
+            <fieldset>
+                <legend id="titleofform"><b>User Login</b></legend>
+                <label id="fname" for="fname"> FIRST NAME:</label>
+                <input id="fname" name="fname" type="text" value="yasmen" maxlength="10" required/><br />
+                <label id="lname" for="lname"> LAST NAME:</label>
+                <input id="lname" name="lname" type="text" value="mahmoud"/><br />
+                <label id="age" for="age"> AGE:</label>
+                <input id="age" name="age" type="number" value="21" min="5" max="100" /><br />
+                <label id="email" for="email"> EMAIL:</label>
+                <input id="email" name="email" type="email" /><br />
+                <label id="pass" for="pass"> PASSWORD:</label>
+                <input id="pass" name="pass" type="password" /><br />
+                <label id="phone" for="phone"> PHONE:</label>
+                <input id="phone" name="phone" type="number" /><br />
+                <input type="submit" value="Login in" />
+                <input type="reset" value="Reset" />
+
+            </fieldset>
+        </form>
+
+    </div>
+
+    <div class="bookinfo" id="bookinfo">
+        <form id="form2" name="form2" action="/action_page.php" target="_blank" method="post">
+            <fieldset>
+                <legend id="titleofform">Favourite Book</legend>
+                <label id="rad" for="rad">BOOK NATIONALITY(only choice):</label><br />
+                <input id="ar" name="ar" type="radio" value="arabic book" />
+                <label for="ar">Arabic Book</label><br />
+                <input id="fo" name="fo" type="radio" value="foreign book" />
+                <label for="fo">Foreign Book</label><br />
+                <label for="country">COUNTRY OF BOOK(only choice):</label>
+                <input list="country" name="country" />
+                <datalist id="country">
+                    <option value="Egypt"></option>Palestine
+                    <option value="Tunisia"></option>
+                    <option value="Lebanon"></option>
+                    <option value="Iraq"></option>
+                    <option value="Syria"></option>
+                    <option value="Britain"></option>
+                    <option value="London"></option>
+                    <option value="America"></option>
+                    <option value="France"></option>
+                    <option value="Italy"></option>
+                    <option value="Spain"></option>
+                    <option value="China"></option>
+                    <option value="Korea"></option>
+                    <option value="Greece"></option>
+                </datalist><br />
+                <label for="size">SIZE OF BOOK(only choice):</label>
+                <select id="size" for="size">
+                    <option value="small">Small</option>
+                    <option value="mediam">Mediam</option>
+                    <option value="large">Large</option>
+                </select><br />
+                <label for="choose1">TYPE OF FAVOURITE BOOK(can multiple choices):</label><br />
+                <input type="checkbox" id="choose1" name="choose1" value="choose1" />
+                <label for="choose1">Children's books</label><br />
+                <input type="checkbox" id="choose2" name="choose2" value="choose2" />
+                <label for="choose2"> Adventure and thriller books</label><br />
+                <input type="checkbox" id="choose3" name="choose3" value="choose3" />
+                <label for="choose3">Science fiction books</label><br />
+                <input type="checkbox" id="choose4" name="choose4" value="choose4" />
+                <label for="choose4">Romance books</label><br />
+                <input type="checkbox" id="choose5" name="choose5" value="choose5" />
+                <label for="choose5">Drama books</label><br />
+                <input type="checkbox" id="choose6" name="choose6" value="choose6" />
+                <label for="choose6">scientific books</label><br />
+                <input type="checkbox" id="choose7" name="choose7" value="choose7" />
+                <label for="choose7">Horror books</label><br />
+                <input type="submit" value="Submit" />
+                <input type="reset" value="Reset" />
+            </fieldset>
+        </form>
+
+    </div>
+
+  <script>
+      function requiredfields() {
+          var password = document.forms["form1"]["pass"].value;
+          var email = document.forms["form1"]["email"].value;
+          if (password =="" ||email == "") {
+              alert("please, password and email both must be filled out");
+              return false;
+          }
+      }
+      function Maxlengthlname() {
+          var lname = document.forms["form1"]["lname"].value;
+          if (lname != "") {
+              var maxlength = lname.length
+              if (maxlength <= 10) {
+                  console.log("length is be accepted");
+                  return true;
+              } else {
+                  alert("maxlength of last name is 10, length must is less than or equal 10");
+                  return false;
+              }
+              
+          }
+      }
+
+
+
+
+
+
+      /*
+        function validemail() {
+            var validemail = /[a - zA - Z0 - 9._%+-! # $ & ' *   / = ? ^  ` { |]+@[a - zA - Z]+\.[a - zA - Z]{2,}$/;
+            var email = document.forms["form2"]["email"].value;
+            var email = email.value.trim();
+            if (email === "") {
+                alert("please,email must be filled out");
+                return false;
+
+            } else if (!validemail.test(email)) {
+                alert("Please enter a valid email");
+                return false;
+            }
+
+            return true;
+        }
+        */
+  </script>
+
+
+
+
+
+</body>
+</html>
